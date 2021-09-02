@@ -1,0 +1,29 @@
+<div >
+  <form class="column" (ngSubmit)="addUser(formUser.value)" [formGroup]="formUser">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Імя</mat-label>
+    <input  [readonly]="!data.toggle" matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field  class="example-full-width" appearance="fill">
+    <mat-label>Прізвище</mat-label>
+    <input  [readonly]="!data.toggle" matInput formControlName="lastname" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Номер телефона</mat-label>
+    <input type="tel" matInput placeholder="555-555-1234" [readonly]="!data.toggle"   formControlName="number">
+  </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>дата народження</mat-label>
+    <input [readonly]="!data.toggle" matInput  formControlName="dateBirth">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Місто</mat-label>
+    <input [readonly]="!data.toggle" matInput formControlName="city">
+  </mat-form-field>
+  <div>
+    <button [disabled]="formUser.invalid" *ngIf="data.toggle" mat-raised-button color="primary" [innerText]="getText"></button>
+  </div>
+  </form>
+
+</div>
+
